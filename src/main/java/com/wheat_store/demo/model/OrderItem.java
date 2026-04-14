@@ -1,13 +1,15 @@
 package com.wheat_store.demo.model;
 
+import java.util.UUID;
+
 import jakarta.persistence.*;
 
 @Entity
 public class OrderItem {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
 
     @ManyToOne
     private Order order;
@@ -19,8 +21,8 @@ public class OrderItem {
 
     private double price;
 
-    public Long getId() {return id;}
-    public void setId(Long id) {this.id = id;}
+    public UUID getId() {return id;}
+    public void setId(UUID id) {this.id = id;}
 
     public Order getOrder() {return order;}
     public void setOrder(Order order) {this.order = order;}

@@ -3,7 +3,7 @@
 🔐 AUTH APIs -----
 
  https://store-backed.onrender.com
- 
+
 1️⃣ SIGN-UP (Register User)
 
 curl -X POST 'http://localhost:8080/api/auth/signup' \
@@ -20,7 +20,7 @@ curl -X POST 'http://localhost:8080/api/auth/signup' \
 
 2️⃣ LOGIN (Get JWT Token)
 
-curl -X POST http://localhost:8080/api/auth/login \
+curl -X POST https://store-backed.onrender.com/api/auth/login \
 -H "Content-Type: application/json" \
 -d '{
   "userName": "testuser",
