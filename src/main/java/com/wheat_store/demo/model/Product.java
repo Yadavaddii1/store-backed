@@ -3,16 +3,12 @@ package com.wheat_store.demo.model;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.*;
-import org.hibernate.annotations.JdbcTypeCode;
-import org.hibernate.type.SqlTypes;
 
 @Entity
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    @JdbcTypeCode(SqlTypes.CHAR)
-    @Column(length = 36, columnDefinition = "char(36)")
     private UUID id;
 
     private String name;

@@ -11,6 +11,7 @@ import jakarta.persistence.OneToOne;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 
 
@@ -19,7 +20,7 @@ public class Cart {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private UUID id;
 
     @OneToOne
     @JoinColumn(name = "user_id")
@@ -39,8 +40,8 @@ public class Cart {
     }
 
 
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    public UUID getId() { return id; }
+    public void setId(UUID id) { this.id = id; }
 
     public Customer getUser() { return user; }
     public void setUser(Customer user) { this.user = user; }

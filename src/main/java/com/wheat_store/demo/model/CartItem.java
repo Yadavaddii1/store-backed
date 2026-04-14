@@ -1,5 +1,7 @@
 package com.wheat_store.demo.model;
 
+import java.util.UUID;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
@@ -8,7 +10,7 @@ public class CartItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private UUID id;
 
     @ManyToOne
     @JoinColumn(name = "cart_id")
@@ -23,8 +25,8 @@ public class CartItem {
 
     // getters & setters
 
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    public UUID getId() { return id; }
+    public void setId(UUID id) { this.id = id; }
 
     public Cart getCart() { return cart; }
     public void setCart(Cart cart) { this.cart = cart; }

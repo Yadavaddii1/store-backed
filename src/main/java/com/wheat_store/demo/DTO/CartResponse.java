@@ -1,17 +1,18 @@
 package com.wheat_store.demo.DTO;
 
 import java.util.List;
+import java.util.UUID;
 
 public class CartResponse {
-    private Long cartId;
+    private UUID cartId;
     private List<CartItemResponse> items;
     private double totalAmount;
 
-    public Long getCartId() {
+    public UUID getCartId() {
         return cartId;
     }
 
-    public void setCartId(Long cartId) {
+    public void setCartId(UUID cartId) {
         this.cartId = cartId;
     }
 
