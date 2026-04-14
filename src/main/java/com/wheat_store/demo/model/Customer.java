@@ -2,8 +2,6 @@ package com.wheat_store.demo.model;
 
 import jakarta.persistence.*;
 import java.util.UUID;
-import org.hibernate.annotations.JdbcTypeCode;
-import org.hibernate.type.SqlTypes;
 
 
 @Entity
@@ -12,8 +10,7 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    @JdbcTypeCode(SqlTypes.CHAR)
-    @Column(name = "id", updatable = false, nullable = false, length = 36, columnDefinition = "char(36)")
+    @Column(name = "id", updatable = false, nullable = false)
     private UUID id;
 
     @Column(nullable = false)

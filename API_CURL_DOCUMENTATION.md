@@ -2,7 +2,8 @@
 
 🔐 AUTH APIs -----
 
-
+ https://store-backed.onrender.com
+ 
 1️⃣ SIGN-UP (Register User)
 
 curl -X POST 'http://localhost:8080/api/auth/signup' \
