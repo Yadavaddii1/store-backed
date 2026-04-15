@@ -84,7 +84,7 @@ public class AdminController {
         OrderResponse dto = new OrderResponse();
 
         // ✅ BASIC INFO
-        dto.setOrderId(order.getId());
+        dto.setOrderId(order.getId().toString());
         dto.setAddress(order.getAddress());
         dto.setLatitude(order.getLatitude());
         dto.setLongitude(order.getLongitude());

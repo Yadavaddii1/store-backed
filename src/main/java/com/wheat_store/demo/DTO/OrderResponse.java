@@ -5,7 +5,7 @@ import java.util.List;
 
 public class OrderResponse {
 
-    private Long orderId;   // ✅ FIXED (was String)
+    private String orderId;   // ✅ FIXED (was String)
 
     private String customerName;   // ✅ NEW
     private String phone;          // ✅ NEW
@@ -23,8 +23,8 @@ public class OrderResponse {
 
     // getters & setters
 
-    public Long getOrderId() { return orderId; }
-    public void setOrderId(Long orderId) { this.orderId = orderId; }
+    public String getOrderId() { return orderId; }
+    public void setOrderId(String orderId) { this.orderId = orderId; }
 
     public String getCustomerName() { return customerName; }
     public void setCustomerName(String customerName) { this.customerName = customerName; }

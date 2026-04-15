@@ -1,17 +1,18 @@
 package com.wheat_store.demo.DTO;
 
+import java.util.UUID;
 
 public class PaymentResponse {
-    private Long orderId;
+    private UUID orderId;
     private String paymentId;
     private String status;
     private String method;
 
-    public Long getOrderId() {
+    public UUID getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(Long orderId) {
+    public void setOrderId(UUID orderId) {
         this.orderId = orderId;
     }
 

@@ -9,8 +9,8 @@ import java.util.*;
 public class Order {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
 
     @ManyToOne
     private Customer user;
@@ -30,8 +30,8 @@ public class Order {
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> items = new ArrayList<>();
 
-    public Long getId() {return id;}
-    public void setId(Long id) {this.id = id;}
+    public UUID getId() {return id;}
+    public void setId(UUID id) {this.id = id;}
 
     public Customer getUser() {return user;}
     public void setUser(Customer user) {this.user = user;}
