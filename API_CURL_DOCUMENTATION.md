@@ -49,9 +49,10 @@ with your real token.
 
 3️⃣ CREATE PRODUCT
 
-curl -X POST http://localhost:8080/api/admin/products \
+
+curl -X POST https://store-backed.onrender.com/api/admin/products \
 -H "Content-Type: application/json" \
--H "Authorization: Bearer ADMIN_TOKEN" \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBZG1pbi0xIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzc2MjQ4NjM1LCJleHAiOjE3NzYzMzUwMzV9.p2jIp-iT8DNg2zzk9XrBKcZwg81zCemq_3TYGrypKTc" \
 -d '{
   "productName": "Sharbati Wheat",
   "productDescription": "Premium quality wheat",
@@ -94,7 +95,8 @@ No token required (if permitAll enabled)
 
 6️⃣ GET ALL PRODUCTS (Basic)
 
-curl http://localhost:8080/api/products
+https://store-backed.onrender.com
+curl https://store-backed.onrender.com/api/products
 
 
 7️⃣ GET SINGLE PRODUCT BY ID
