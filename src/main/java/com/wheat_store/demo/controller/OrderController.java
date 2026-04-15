@@ -73,7 +73,7 @@ public class OrderController {
 
     private OrderResponse toOrderResponse(Order order) {
         OrderResponse response = new OrderResponse();
-        response.setOrderId(String.valueOf(order.getId()));
+        response.setOrderId(order.getId());
         response.setAddress(order.getAddress());
         response.setLatitude(order.getLatitude());
         response.setLongitude(order.getLongitude());

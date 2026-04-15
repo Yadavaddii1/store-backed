@@ -9,6 +9,9 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.wheat_store.demo.DTO.OrderItemDTO;
+import com.wheat_store.demo.DTO.OrderResponse;
 import com.wheat_store.demo.model.Cart;
 import com.wheat_store.demo.model.Customer;
 import com.wheat_store.demo.model.Order;
@@ -40,13 +43,6 @@ public class AdminController {
     public List<Customer> getUsers() {
         return customerRepository.findAll();
     }
-
-    // ORDERS
-    @GetMapping("/orders")
-    public List<Order> getOrders() {
-        return orderRepository.findAll();
-    }
-
     // CARTS
     @GetMapping("/carts")
     public List<Cart> getCarts() {
@@ -77,6 +73,59 @@ public class AdminController {
 
     return stats;
     }
+
+    @GetMapping("/orders")
+    public Map<String, Object> getOrders() {
+
+    List<Order> orders = orderRepository.findAll();
+
+    List<OrderResponse> response = orders.stream().map(order -> {
+
+        OrderResponse dto = new OrderResponse();
+
+        // ✅ BASIC INFO
+        dto.setOrderId(order.getId());
+        dto.setAddress(order.getAddress());
+        dto.setLatitude(order.getLatitude());
+        dto.setLongitude(order.getLongitude());
+        dto.setTotalAmount(order.getTotalAmount());
+        dto.setStatus(order.getStatus());
+        dto.setCreatedAt(order.getCreatedAt());
+
+        // ✅ CUSTOMER INFO
+        dto.setCustomerName(order.getUser().getName());
+        dto.setPhone(order.getUser().getPhoneNumber());
+
+        // ✅ ITEMS
+        List<OrderItemDTO> items = order.getItems().stream().map(item -> {
+
+            OrderItemDTO itemDTO = new OrderItemDTO();
+
+            itemDTO.setProductName(
+                item.getProductVariant().getProduct().getProductName()
+            );
+            itemDTO.setWeight(
+                item.getProductVariant().getWeight()
+            );
+            itemDTO.setPrice(item.getPrice());
+            itemDTO.setQuantity(item.getQuantity());
+
+            return itemDTO;
+
+        }).toList();
+
+        dto.setItems(items);
+
+        return dto;
+
+    }).toList();
+
+    return Map.of(
+        "success", true,
+        "message", "Orders fetched successfully",
+        "data", response
+    );
+}
 
 }
     

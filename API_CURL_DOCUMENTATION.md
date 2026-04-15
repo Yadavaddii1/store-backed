@@ -221,3 +221,25 @@ After payment data
 
 curl --location 'http://localhost:8080/api/order/my-orders' \
 --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJEZW1vLTEiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc3NTU0NjAyMywiZXhwIjoxNzc1NjMyNDIzfQ.QhZhA7sMuw3yHEi7yNVz0qMhXxyjKSu5-6YDtTfAWi4'
+
+
+
+
+####--- ADMIN DATA FOR DASHBOARD -----#####
+
+curl --location 'https://store-backed.onrender.com/api/admin/products' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBZG1pbi0xIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzc2MjU4MDU2LCJleHAiOjE3NzYzNDQ0NTZ9.3PkrNm4weCvDHt-OaQNUMKZAPFNigehAGhGAKND0IBo'
+
+curl --location 'https://store-backed.onrender.com/api/admin/users' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBZG1pbi0xIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzc2MjU4MDU2LCJleHAiOjE3NzYzNDQ0NTZ9.3PkrNm4weCvDHt-OaQNUMKZAPFNigehAGhGAKND0IBo'
+
+
+curl --location 'https://store-backed.onrender.com/api/admin/orders' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBZG1pbi0xIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzc2MjU4MDU2LCJleHAiOjE3NzYzNDQ0NTZ9.3PkrNm4weCvDHt-OaQNUMKZAPFNigehAGhGAKND0IBo'
+
+curl --location 'https://store-backed.onrender.com/api/admin/cart' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBZG1pbi0xIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzc2MjU4MDU2LCJleHAiOjE3NzYzNDQ0NTZ9.3PkrNm4weCvDHt-OaQNUMKZAPFNigehAGhGAKND0IBo'
+
+curl --location 'https://store-backed.onrender.com/api/admin/stats' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBZG1pbi0xIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzc2MjU4MDU2LCJleHAiOjE3NzYzNDQ0NTZ9.3PkrNm4weCvDHt-OaQNUMKZAPFNigehAGhGAKND0IBo'
+
